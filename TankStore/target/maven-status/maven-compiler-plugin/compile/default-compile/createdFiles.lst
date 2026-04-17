@@ -1,0 +1,7 @@
+com\mycompany\tankstore\servlets\EliminarProyectoServlet.class
+com\mycompany\tankstore\resources\JakartaEE10Resource.class
+com\mycompany\tankstore\servlets\LoginServlet.class
+com\mycompany\tankstore\JakartaRestConfiguration.class
+com\mycompany\tankstore\servlets\ActualizarEstadoServlet.class
+com\mycompany\tankstore\servlets\ListarProyectosServlet.class
+com\mycompany\tankstore\servlets\RegistroProyectoServlet.class

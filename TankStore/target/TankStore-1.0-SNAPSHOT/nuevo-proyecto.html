@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Proyecto - TankStore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /*NAVBAR (igual al dashboard)*/
+        .navbar {
+            background-color: #003366;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #004d99;
+        }
+        .navbar a.active {
+            background-color: #0056b3;
+        }
+
+        /*FORMULARIO*/
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .formulario-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .formulario-container h2 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+            font-size: 14px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #0056b3;
+            box-shadow: 0 0 4px rgba(0,86,179,0.3);
+        }
+
+        /* Select para el estado */
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: white;
+        }
+        select:focus {
+            outline: none;
+            border-color: #0056b3;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            padding: 12px 15px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #004494;
+        }
+        .btn-secundario {
+            display: block;
+            text-align: center;
+            margin-top: 12px;
+            color: #0056b3;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .btn-secundario:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>📊 TankStore Proyectos</h1>
+        <div class="nav-links">
+            <a href="ListarProyectosServlet">Dashboard</a>
+            <a href="nuevo_proyecto.html" class="active">+ Nuevo Proyecto</a>
+            <a href="index.html" style="background-color: rgba(255,255,255,0.15);">Cerrar Sesión</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="formulario-container">
+            <h2>📝 Registrar Nuevo Proyecto</h2>
+
+            <form action="RegistroProyectoServlet" method="POST">
+                <label for="nombre">Nombre del Proyecto:</label>
+                <input type="text" id="nombre" name="nombre" required
+                       placeholder="Ej. Actualización de red">
+
+                <label for="responsable">Responsable / Administrador:</label>
+                <input type="text" id="responsable" name="responsable" required
+                       placeholder="Nombre del encargado">
+
+                <label for="estado">Estado Inicial:</label>
+                <select id="estado" name="estado">
+                    <option value="En Progreso">🟡 En Progreso</option>
+                    <option value="Pendiente">⚪ Pendiente</option>
+                    <option value="Terminado">🟢 Terminado</option>
+                    <option value="Cancelado">🔴 Cancelado</option>
+                </select>
+
+                <button type="submit">Guardar Proyecto</button>
+            </form>
+
+            <a href="ListarProyectosServlet" class="btn-secundario">← Volver al Dashboard</a>
+        </div>
+    </div>
+
+</body>
+</html>
